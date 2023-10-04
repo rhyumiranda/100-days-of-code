@@ -15,18 +15,23 @@ function calculateTip(){
 }
 
 function getAmountOfBill(){
-  let amount = parseFloat(prompt("Kindly enter the amount of your bill. Thank you!"));
-  return amount;
+  let amount;
+
+  do{
+    amount = parseFloat(prompt("Enter the bill amount"));
+  } while (Number.isNaN(Number(amount)) || amount <= 0);
+
+    return amount;
 }
 
 function getTipPercentage(){
   let percentage;
-  
+
   do{
-    percentage = parseFloat(prompt("Please enter the percentage of tip you want to give."));
-  } while (Number.isNaN(Number(percentage)));
-  
-  return percentage;
+    percentage = parseFloat(prompt("Enter percentage 0.01 ~ 0.99"));
+  } while (Number.isNaN(Number(percentage)) || percentage <= 0 || percentage > 0.99);
+
+    return percentage;
 }
 
 const amountOfBill = getAmountOfBill();
@@ -34,3 +39,4 @@ const tipPercentage = getTipPercentage();
 
 console.log(typeof(amountOfBill));
 console.log(typeof(tipPercentage));
+console.log(amountOfBill * tipPercentage);
