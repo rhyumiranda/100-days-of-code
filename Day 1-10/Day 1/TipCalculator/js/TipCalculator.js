@@ -10,8 +10,19 @@
 // 1. People who will split the bill + tip
 // 2. Print tip per person
 
-function calculateTip(){
-  
+function calculateTip(amountOfBill, tipPercentage){
+  console.log(`The tip you are willing to give is ₱${tip}`);
+  console.log(`Total amount including the tip is ₱${totalAmount}`);
+}
+
+const getTip = (amountOfBill, tipPercentage) =>{
+
+  return amountOfBill * tipPercentage;
+}
+
+const getTotalAll = () => {
+
+  return tip + amountOfBill;
 }
 
 function getAmountOfBill(){
@@ -20,23 +31,32 @@ function getAmountOfBill(){
   do{
     amount = parseFloat(prompt("Enter the bill amount"));
   } while (Number.isNaN(Number(amount)) || amount <= 0);
+  console.log(`Your current bill amount is ₱${amount}`);
 
-    return amount;
+  return amount;
 }
 
 function getTipPercentage(){
   let percentage;
+  let percentageConvert;
 
   do{
     percentage = parseFloat(prompt("Enter percentage 0.01 ~ 0.99"));
   } while (Number.isNaN(Number(percentage)) || percentage <= 0 || percentage > 0.99);
 
-    return percentage;
+  percentageConvert = percentage * 100;
+  console.log(`The percentage of tip you want to give is ${percentageConvert}%`);
+
+  return percentage;
 }
 
 const amountOfBill = getAmountOfBill();
 const tipPercentage = getTipPercentage();
+const tip = getTip();
+const totalAmount = getTotalAll();
 
-console.log(typeof(amountOfBill));
-console.log(typeof(tipPercentage));
-console.log(amountOfBill * tipPercentage);
+console.log(amountOfBill);
+console.log(tipPercentage);
+console.log(tip);
+console.log(totalAmount);
+
