@@ -1,27 +1,16 @@
-//Things to do:
-
-// 1. Create a function that would acccept the amount of bill /
-// 2. Create ... that would accept tip percentage /
-      // >> Convert integer form into decimal  /
-// 3. Print the amount of tip / 
-// 4. Print amount of bill + tip /
-
-// Additional Features 
-// 1. People who will split the bill + tip
-// 2. Print tip per person
-
 function calculateTip(){
-  let amount;
+  let bill;
   let percentage;
   let percentageConvert;
   let tip;
   let totalAmount;
+  let peopleSplit;
   
   do{
-    amount = parseFloat(prompt("Enter the bill amount"));
-  } while (Number.isNaN(Number(amount)) || amount <= 0);
+    bill = parseFloat(prompt("Enter the bill amount"));
+  } while (Number.isNaN(Number(bill)) || bill <= 0);
 
-  console.log(`Your current bill is ₱${amount}`);
+  console.log(`Your current bill is ₱${bill}`);
 
   do{
     percentage = parseFloat(prompt("Enter percentage 0.01 ~ 0.99"));
@@ -30,9 +19,16 @@ function calculateTip(){
   percentageConvert = percentage * 100;
   console.log(`The percentage of tip you will give is ${percentageConvert}%`);
 
-  tip = amount * percentage;
-  totalAmount = tip + amount;
+  do{
+    split = parseFloat(prompt("Enter how many people would split the bill?"));
+  } while (Number.isNaN(Number(split)) || split <= 0);
+
+  tip = bill * percentage;
+  peopleSplit = Math.round(parseFloat(tip) / parseFloat(split));
+  totalAmount = tip + bill;
 
   console.log(`Tip total: ₱${tip}`);
+  console.log(`The number of people who will split the bill are ${split} People`);
+  console.log(`The amount of tip per person is: ₱${peopleSplit}`);
   console.log(`Total amount: ₱${totalAmount}`);
 }
