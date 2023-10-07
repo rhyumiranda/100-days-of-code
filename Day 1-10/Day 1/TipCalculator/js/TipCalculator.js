@@ -28,7 +28,7 @@ function calculateTip(){
   totalAmount = tip + bill;
 
   console.log(`Tip total: ₱${tip}`);
-  console.log(`The number of people who will split the bill are ${split} People`);
-  console.log(`The amount of tip per person is: ₱${peopleSplit}`);
+  console.log(`${split} People will split the tip`);
+  console.log(`The tip per person is: ₱${peopleSplit}`);
   console.log(`Total amount: ₱${totalAmount}`);
 }
