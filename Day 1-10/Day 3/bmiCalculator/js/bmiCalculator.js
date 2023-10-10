@@ -34,8 +34,6 @@ function calculateBMI(){
     } while (Number.isNaN(Number(height)) || height <= 0);
 
     height *= 2;
-
-
   } else if (unitChoice == "metric"){
     do{
       weight = parseFloat(prompt("Enter your weight in kg"));
@@ -47,7 +45,26 @@ function calculateBMI(){
 
     height *= height;
     bmi = (weight / height);
+    bmiRound = bmi.toFixed(2);
+
+    console.log(`Your bmi result is ${bmiRound}`);
+
+    return bmiRound;
+
   }
 }
 
-calculateBMI();
+function checkBMI(bmiResult){
+  const userBMI = calculateBMI();
+  if(userBMI >= 30){
+    return console.log("Obesity");
+  } else if (userBMI >= 25){
+    return console.log("Over weight");
+  } else if (userBMI >= 18.5){
+    return console.log("Normal weight");
+  } else if (userBMI <= 18.49){
+    return console.log("Underweight");
+  }
+}
+
+checkBMI()
