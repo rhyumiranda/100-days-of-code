@@ -42,16 +42,18 @@ function calculateBMI(){
     do{
       height = parseFloat(prompt("Enter your height in meters"));
     } while (Number.isNaN(Number(height)) || height <= 0);
-
+    
+    height *= 2;
     height *= height;
     bmi = (weight / height);
     bmiRound = bmi.toFixed(2);
+  }
 
     console.log(`Your bmi result is ${bmiRound}`);
 
     return bmiRound;
 
-  }
+  
 }
 
 function checkBMI(bmiResult){
