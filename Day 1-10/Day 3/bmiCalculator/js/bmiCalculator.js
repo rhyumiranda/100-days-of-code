@@ -33,7 +33,10 @@ function calculateBMI(){
       height = parseFloat(prompt("Enter your height in inches"));
     } while (Number.isNaN(Number(height)) || height <= 0);
 
-    height *= 2;
+    height *= height;
+    bmi = (703 * weight) / height;
+    bmiRound = bmi.toFixed(2);
+
   } else if (unitChoice == "metric"){
     do{
       weight = parseFloat(prompt("Enter your weight in kg"));
