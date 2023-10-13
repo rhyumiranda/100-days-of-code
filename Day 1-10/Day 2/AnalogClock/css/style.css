@@ -1,6 +1,46 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1B1610;
+}
+
 .clock {
-    background-color: beige;
     width: 300px;
     height: 300px;
+    background-color: #251f16;
     border-radius: 150px;
+    border: solid white 1px;
+    position: relative;
 }
+
+.clock .number {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    font-size: 35px;
+    transform: rotate(var(--rotation));
+}
+
+.clock .number1 {--rotation: 30deg }
+.clock .number2 {--rotation: 60deg }
+.clock .number3 {--rotation: 90deg }
+.clock .number4 {--rotation: 120deg }
+.clock .number5 {--rotation: 150deg }
+.clock .number6 {--rotation: 180deg }
+.clock .number7 {--rotation: 210deg }
+.clock .number8 {--rotation: 240deg }
+.clock .number9 {--rotation: 270deg }
+.clock .number10 {--rotation: 300deg }
+.clock .number11 {--rotation: 330deg }
+
+
+
+
+
+
+
+
+
