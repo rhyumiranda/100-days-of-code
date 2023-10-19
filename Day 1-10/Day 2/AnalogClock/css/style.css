@@ -20,7 +20,7 @@ body {
     height: 100%;
     width: 100%;
     text-align: center;
-    font-size: 35px;
+    font-size: 30px;
     transform: rotate(var(--rotation));
 }
 
@@ -35,6 +35,36 @@ body {
 .clock .number9 {--rotation: 270deg }
 .clock .number10 {--rotation: 300deg }
 .clock .number11 {--rotation: 330deg }
+
+.clock .hand{
+    --rotation: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    background-color: white;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.clock .hand.second {
+    width: 3px;
+    height: 45%;
+    background-color: white;
+}
+
+.clock .hand.minute{
+    width: 7px;
+    height: 45%;
+    background-color: rgb(255, 72, 72);
+}
+
+.clock .hand.hour{
+    width: 10px;
+    height: 35%;
+    background-color: rgb(143, 17, 27);
+}
 
 
 
